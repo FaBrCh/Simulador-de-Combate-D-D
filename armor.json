@@ -1,0 +1,52 @@
+{
+    "leather": {
+        "cost": 10,
+        "AC": 11,
+        "type": "light"
+    },
+    "studded leather": {
+        "cost": 45,
+        "AC": 12,
+        "type": "light"
+    },
+    "hide": {
+        "cost": 10,
+        "AC": 12,
+        "type": "medium"
+    },
+    "chain shirt": {
+        "cost": 50,
+        "AC": 13,
+        "type": "medium"
+    },
+    "breastplate": {
+        "cost": 400,
+        "AC": 14,
+        "type": "medium"
+    },
+    "half plate": {
+        "cost": 750,
+        "AC": 15,
+        "type": "medium"
+    },
+    "ring mail": {
+        "cost": 30,
+        "AC": 14,
+        "type": "heavy"
+    },
+    "chain mail": {
+        "cost": 75,
+        "AC": 16,
+        "type": "heavy"
+    },
+    "splint": {
+        "cost": 200,
+        "AC": 17,
+        "type": "heavy"
+    },
+    "plate": {
+        "cost": 1500,
+        "AC": 18,
+        "type": "heavy"
+    }
+}

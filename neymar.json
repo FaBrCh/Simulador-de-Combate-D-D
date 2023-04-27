@@ -1,0 +1,9 @@
+{
+    "name": "Neymar",
+    "strength": 9,
+    "dexterity": 8,
+    "armor": "plate",
+    "weapon": "rapier",
+    "shield": true,
+    "HP": 20
+}

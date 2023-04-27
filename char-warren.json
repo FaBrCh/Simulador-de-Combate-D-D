@@ -1,0 +1,9 @@
+{
+    "name": "Warren",
+    "strength": 18,
+    "dexterity": 19,
+    "armor": "plate",
+    "weapon": "greatsword",
+    "shield": false,
+    "HP": 30
+}

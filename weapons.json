@@ -1,0 +1,42 @@
+{
+    "dagger": {
+        "cost": 2,
+        "damage": "d4",
+        "props": ["finesse"]
+    },
+    "mace": {
+        "cost": 5,
+        "damage": "d6",
+        "props": []
+    },
+    "battleaxe": {
+        "cost": 10,
+        "damage": "d8",
+        "props": []
+    },
+    "longsword": {
+        "cost": 15,
+        "damage": "d8",
+        "props": []
+    },
+    "maul": {
+        "cost": 10,
+        "damage": "d12",
+        "props": ["2-hand"]
+    },
+    "rapier": {
+        "cost": 25,
+        "damage": "d8",
+        "props": ["finesse"]
+    },
+    "greatsword": {
+        "cost": 50,
+        "damage": "d12",
+        "props": ["2-hand"]
+    },
+    "glaive": {
+        "cost": 20,
+        "damage": "d10",
+        "props": ["2-hand"]
+    }
+}

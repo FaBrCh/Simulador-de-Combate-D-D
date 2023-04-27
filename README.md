@@ -24,7 +24,8 @@ Ao serem lidos pelo código acima, as bases de dados são carregadas como um dic
 
 ### Base de Dados de Armaduras
 ---
-A base de dados de armaduras é um arquivo JSON contendo um dicionário onde as chaves são o nome da armadura, e os valores são outro dicionário contendo o custo (cost, inteiro, em peças de ouro), a classe de armadura (AC, inteiro) e o tipo da armadura (type, um string que pode conter os valores light, medium, ou heavy). Exemplo:
+A base de dados de armaduras é um arquivo JSON contendo um dicionário onde as chaves são o nome da armadura, e os valores são outro dicionário contendo o custo (cost, inteiro, em peças de ouro), a classe de armadura (AC, inteiro) e o tipo da armadura (type, um string que pode conter os valores light, medium, ou heavy). 
+Exemplo:
 ```
 {
     "leather": {
@@ -46,7 +47,8 @@ A base de dados de armaduras é um arquivo JSON contendo um dicionário onde as 
 ```
 ### Base de Dados de Armas
 ---
-A base de dados de armas é um arquivo JSON contendo um dicionário onde as chaves são o nome da arma, e os valores são outro dicionário contendo o custo (cost, inteiro, em peças de ouro), o dado de dano (damage, um string que pode ser d4, d6, d8, d10, ou d12) e as propriedades da arma (props, uma lista de strings). As propriedades de arma incluídas na base podem ser 2-hand e finesse. Exemplo:
+A base de dados de armas é um arquivo JSON contendo um dicionário onde as chaves são o nome da arma, e os valores são outro dicionário contendo o custo (cost, inteiro, em peças de ouro), o dado de dano (damage, um string que pode ser d4, d6, d8, d10, ou d12) e as propriedades da arma (props, uma lista de strings). As propriedades de arma incluídas na base podem ser 2-hand e finesse. 
+Exemplo:
 ```
 {
     "dagger": {
@@ -68,7 +70,8 @@ A base de dados de armas é um arquivo JSON contendo um dicionário onde as chav
 ```
 ### Base de Dados de Atributos
 ---
-Nosso simulador armazena apenas dois atributos de personagens: força (strength) e destreza (dexterity). Atributos com valores altos conferem um bônus e atributos com valores baixos conferem uma penalidade ao personagem. A base de dados de atributos é um arquivo JSON contendo uma lista onde o índice i contém o bônus correspondente a um atributo com o valor i. Por exemplo, o índice 14 da lista contém o bônus que um personagem recebe quando ele tem um atributo com valor 14. Exemplo:
+Nosso simulador armazena apenas dois atributos de personagens: força (strength) e destreza (dexterity). Atributos com valores altos conferem um bônus e atributos com valores baixos conferem uma penalidade ao personagem. A base de dados de atributos é um arquivo JSON contendo uma lista onde o índice i contém o bônus correspondente a um atributo com o valor i. Por exemplo, o índice 14 da lista contém o bônus que um personagem recebe quando ele tem um atributo com valor 14. 
+Exemplo:
 ``` 
 [null, -5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5]
 ``` 
@@ -83,7 +86,6 @@ random.randint(1, x)  # rolando um dado de 6 lados (d6)
 ```
 ### Ficha de Personagens
 ---
-
 A ficha de personagens também serão armazenadas em arquivos JSON contendo um dicionário, que deve conter os seguintes campos:
 
 * name: Um string contendo o nome do personagem.

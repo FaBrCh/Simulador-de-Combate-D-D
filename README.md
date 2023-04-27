@@ -26,6 +26,7 @@ Ao serem lidos pelo código acima, as bases de dados são carregadas como um dic
 ---
 A base de dados de armaduras é um arquivo JSON contendo um dicionário onde as chaves são o nome da armadura, e os valores são outro dicionário contendo o custo (cost, inteiro, em peças de ouro), a classe de armadura (AC, inteiro) e o tipo da armadura (type, um string que pode conter os valores light, medium, ou heavy). 
 Exemplo:
+
 ```
 {
     "leather": {
@@ -45,10 +46,12 @@ Exemplo:
     }
 }
 ```
+
 ### Base de Dados de Armas
 ---
 A base de dados de armas é um arquivo JSON contendo um dicionário onde as chaves são o nome da arma, e os valores são outro dicionário contendo o custo (cost, inteiro, em peças de ouro), o dado de dano (damage, um string que pode ser d4, d6, d8, d10, ou d12) e as propriedades da arma (props, uma lista de strings). As propriedades de arma incluídas na base podem ser 2-hand e finesse. 
 Exemplo:
+
 ```
 {
     "dagger": {
@@ -68,10 +71,12 @@ Exemplo:
     }
 }
 ```
+
 ### Base de Dados de Atributos
 ---
 Nosso simulador armazena apenas dois atributos de personagens: força (strength) e destreza (dexterity). Atributos com valores altos conferem um bônus e atributos com valores baixos conferem uma penalidade ao personagem. A base de dados de atributos é um arquivo JSON contendo uma lista onde o índice i contém o bônus correspondente a um atributo com o valor i. Por exemplo, o índice 14 da lista contém o bônus que um personagem recebe quando ele tem um atributo com valor 14. 
 Exemplo:
+
 ``` 
 [null, -5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5]
 ``` 
@@ -79,11 +84,13 @@ Exemplo:
 ### Rolando Dados
 ---
 Várias ações no jogo de D&D são definidas aleatoriamente rolando dados. Para simular a rolagem de um dado em Python, iremos usar um gerador de números aleatórios. Em python, podemos gerar um número inteiro aleatório entre a e b utilizando a função randint do módulo random da biblioteca padrão. Desta forma, para rolar um dado de x lados, basta utilizar o esqueleto abaixo:
+
 ```
 import random
 x = 6
 random.randint(1, x)  # rolando um dado de 6 lados (d6)
 ```
+
 ### Ficha de Personagens
 ---
 A ficha de personagens também serão armazenadas em arquivos JSON contendo um dicionário, que deve conter os seguintes campos:
@@ -96,6 +103,7 @@ A ficha de personagens também serão armazenadas em arquivos JSON contendo um d
 * shield: Um valor booleano (verdadeiro ou falso) que indica se o personagem usa um escudo.
 * HP: A quantidade de pontos de vida do personagem.
 Exemplo:
+
 ```
 {
     "name": "Warren",
@@ -107,9 +115,9 @@ Exemplo:
     "HP": 56
 }
 ```
+
 ### Regras simplificadas
 ---
-
 * Seu programa deve carregar a ficha de dois personagens.
 * Seu programa deve simular turnos de combate, onde cada personagem irá desferir um ataque contra o oponente.
 * O personagem com maior destreza ataca primeiro.
@@ -117,6 +125,7 @@ Exemplo:
     * Se a armadura for leve (light), some o bônus de destreza do personagem à sua classe de armadura.
     * Se a armadura for média (medium), some até dois pontos de bônus de destreza do personagem à sua classe de armadura.
     * Se a armadura for pesada (heavy), o personagem não soma seu bônus de destreza à sua classe de armadura.
+    * Se o personagem tiver destreza baixa e receber uma penalidade (isto é, se sua destreza for menor do que 10), então a penalidade é sempre subtraída da classe de armadura do personagem, independente do tipo da armadura.
     * Se a arma do personagem for de uma mão (isto é, não tiver a propriedade 2-hand) e se o personagem utilizar um escudo (shield), ele recebe um bônus de +2 em sua classe de armadura.
 * Ao realizar um ataque, um personagem rola um d20 e soma um bônus que depende da arma utilizada e de seus atributos:
     * Some o bônus de força do personagem ao total do seu ataque.
@@ -143,14 +152,18 @@ Quando um personagem for rendido indique o vencedor e a quantidade de pontos de 
 ### Execução do Simulador
 ---
 Seu simulador deve receber como entrada dois parâmetros na linha de comando. Cada parâmetro deve corresponder ao nome de um arquivo contendo uma ficha de personagem. Por exemplo:
+
 ```
 $ python3 dndsim.py warren.json nolden.json
 ```
+
 Para processar parâmetros recebidos na linha de comando, utilize a variável argv contida no módulo sys (de sistema). A variável argv é uma lista de strings onde cada string corresponde aos parâmetros passados pela linha de comando, por exemplo, considere que o código abaixo está em um arquivo chamado print-argv.py:
+
 ```
 import sys
 print(sys.argv)
 ```
+
 Imprimiria o seginte na linha de comando:
 
 ```
@@ -159,6 +172,7 @@ Imprimiria o seginte na linha de comando:
 % python3 print-argv.py fulano.json cicrano.json parametro-adicional-sem-utilidade
 ['print-argv.py', 'fulano.json', 'cicrano.json', 'parametro-adicional-sem-utilidade']
 ```
+
 ### Carregamento dos Arquivos
 ---
 Para permitir a execução do seu programa em qualquer computador, é essencial que ele não contenha caminhos absolutos para arquivos. No Windows, caminhos que começam com um identificador de disco, como C:, são absolutos. No Linux, caminhos que começam com uma barra / são absolutos.

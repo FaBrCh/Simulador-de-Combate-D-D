@@ -1,4 +1,5 @@
 ## Simulador de Combate D&D
+---
 A combat simulator the the world's greatest role playing game
 
 ### Introdução
@@ -156,3 +157,21 @@ Imprimiria o seginte na linha de comando:
 % python3 print-argv.py fulano.json cicrano.json parametro-adicional-sem-utilidade
 ['print-argv.py', 'fulano.json', 'cicrano.json', 'parametro-adicional-sem-utilidade']
 ```
+### Carregamento dos Arquivos
+---
+Para permitir a execução do seu programa em qualquer computador, é essencial que ele não contenha caminhos absolutos para arquivos. No Windows, caminhos que começam com um identificador de disco, como C:, são absolutos. No Linux, caminhos que começam com uma barra / são absolutos.
+
+Você deve submeter seu programa utilizando apenas caminhos relativos para as bases de dados. Em particular, seu programa deve abrir as bases de dados passando caminhos relativos assumindo que as bases de dados estão na mesma pasta onde o programa está sendo executado. Consequentemente, seu programa precisa abrir os arquivos com os seguintes comandos:
+
+```
+with open("armor.json", encoding="utf8") as fd:
+    ...
+with open("weapons.json", encoding="utf8") as fd:
+    ...
+with open("attributes.json", encoding="utf8") as fd:
+    ...
+```
+
+### Estrutura do Código e Acesso às Bases de Dados
+---
+O seu código deve ser independente do conteúdo da base de dados. Em outras palavras, seu código deve carregar a acessar as bases de dados; o código deve funcionar (sem alterações) para diferentes bases. Durante a correção do trabalho, iremos testar a compatibilidade do seu código com uma base de dados expandida. A base expandida conterá armas e armaduras adicionais, mas seu programa deve continuar funcionando corretamente visto que as regras aplicadas são as mesmas.
